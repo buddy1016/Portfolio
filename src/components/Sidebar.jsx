@@ -27,7 +27,7 @@ function Sidebar({ activeSection, setActiveSection, closeSidebar }) {
   const menuItems = [
     { id: "Home", label: "Home", icon: FileText },
     { id: "Experience", label: "Experience", icon: Briefcase },
-    { id: "certifications", label: "Certifications", icon: Award },
+    // { id: "certifications", label: "Certifications", icon: Award },
     { id: "Skills", label: "Skills", icon: Briefcase },
     { id: "Projects", label: "Projects", icon: Newspaper },
     { id: "contact", label: "Contact", icon: Mail },

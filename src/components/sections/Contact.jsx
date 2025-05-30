@@ -5,16 +5,16 @@ import emailjs from 'emailjs-com';
 function Contact() {
 
 
-  function sendEmail(e) {
-    e.preventDefault();
+  // function sendEmail(e) {
+  //   e.preventDefault();
   
-    emailjs.sendForm('service_gs2ieqi', 'template_yjvt91e', e.target, 'H-Qh_zYMF7b6KHgLZ')
-      .then((result) => {
-        console.log('Message sent:', result.text);
-      }, (error) => {
-        console.log('Error:', error.text);
-      });
-  }
+  //   emailjs.sendForm('service_gs2ieqi', 'template_yjvt91e', e.target, 'H-Qh_zYMF7b6KHgLZ')
+  //     .then((result) => {
+  //       console.log('Message sent:', result.text);
+  //     }, (error) => {
+  //       console.log('Error:', error.text);
+  //     });
+  // }
 
 
   return (
@@ -52,7 +52,7 @@ function Contact() {
       <div className="mt-8 sm:mt-12 bg-zinc-900 rounded-xl p-4 sm:p-8">
         <h3 className="text-xl font-bold mb-4 sm:mb-6">Send Me a Message</h3>
 
-        <form className="space-y-4 sm:space-y-6">
+        <form form action="https://formsubmit.co/g35816339@gmail.com" method="POST" className="space-y-4 sm:space-y-6">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
             <div>
               <label htmlFor="name" className="block text-sm font-medium mb-1 sm:mb-2">
@@ -61,6 +61,7 @@ function Contact() {
               <input
                 type="text"
                 id="name"
+                name="name"
                 className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-zinc-800 border border-zinc-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 text-sm sm:text-base"
                 placeholder="Your name"
               />
@@ -72,6 +73,7 @@ function Contact() {
               <input
                 type="email"
                 id="email"
+                name="email"
                 className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-zinc-800 border border-zinc-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 text-sm sm:text-base"
                 placeholder="Your email"
               />
@@ -85,6 +87,7 @@ function Contact() {
             <input
               type="text"
               id="subject"
+              name="subject"
               className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-zinc-800 border border-zinc-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 text-sm sm:text-base"
               placeholder="Subject"
             />
@@ -96,13 +99,15 @@ function Contact() {
             </label>
             <textarea
               id="message"
+              name="message"
               rows={4}
               className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-zinc-800 border border-zinc-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 text-sm sm:text-base"
               placeholder="Your message"
             ></textarea>
           </div>
-
-          <Button className="w-full sm:w-auto rounded-xl bg-blue-500 hover:bg-purple-700 py-2 sm:py-3 px-4 sm:px-6">
+          <input type="hidden" name="_captcha" value="false"/>
+          <input type="hidden" name="_next" value="https://g35816339.github.io/portfolio/"/>
+          <Button type="submit" className="w-full sm:w-auto rounded-xl bg-blue-500 hover:bg-purple-700 py-2 sm:py-3 px-4 sm:px-6">
             <Send size={16} className="mr-2" />
             Send Message
           </Button>
